@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="line" class="com.manipal.spring_assignment">
+		<property name="x" value="23"/>
+		<property name="y" value="123"/>	
+	</bean>
+	
+	<bean id="triangle" class ="com.manipal.spring_assignment">   
+		 <constructor-arg name="t1" ref= "pointt1"></constructor-arg>
+		 <constructor-arg name="t2" ref= "pointt2"></constructor-arg>
+		 <constructor-arg name="t3" ref= "pointt3"></constructor-arg>
+	</bean>
+	
+	<bean id="pointl1" class ="com.manipal.spring_assignment">   
+		 <constructor-arg name="x" value="0"></constructor-arg>
+		 <constructor-arg name="y" value="8"></constructor-arg>
+	</bean>
+	
+	<bean id="pointl2" class ="com.manipal.spring_assignment">   
+		 <constructor-arg name="x" value="12"></constructor-arg>
+		 <constructor-arg name="y" value="611"></constructor-arg>
+	</bean>
+	
+	<bean id="pointt2" class ="com.manipal.spring_assignment">   
+		 <constructor-arg name="x" value="12"></constructor-arg>
+		 <constructor-arg name="y" value="121"></constructor-arg>
+	</bean>
+	
+	<bean id="pointt3" class ="com.manipal.spring_assignment">   
+		 <constructor-arg name="x" value="111"></constructor-arg>
+		 <constructor-arg name="y" value="122"></constructor-arg>
+	</bean>
+	
+</beans>
+

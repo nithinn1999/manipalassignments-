@@ -1,0 +1,156 @@
+
+Table: telstra_database.book
+
+bookid		bname			bprice
+1			nit			100
+2			Eng				200
+3			Java			300
+4			Python			350
+5			React			500
+6			React			550
+7			JavaScript		700
+8			jeabc			600
+
+Table: telstra_database.orders
+
+ordersid	bookid		ordersdate
+200			6			12-02-2020
+500			9			22-03-2020
+800			4			25-09-2020
+1000			8			01-10-2020
+
+
+SELECT * FROM telstra_database.book;                     
+
+
+insert into telstra_database.book values(7,"JavaScript",700); 
+
+
+
+select distinct bname from telstra_database.book;      
+
+
+select count(distinct bname) from telstra_database.book; 
+
+
+select * from telstra_database.book where bookid = 2;   
+
+
+select * from telstra_database.book where (bname = 'Java' 
+OR bname = 'React');                                    
+
+
+
+select * from telstra_database.book order by bname;      
+
+
+
+select * from telstra_database.book order by bname desc;  
+
+
+select * from telstra_database.book order by bname asc, 
+bprice desc;                                              
+
+
+
+insert into telstra_database.book (bookid,bname) values 
+(7,"JavaScript");                                         
+
+
+select TOP 2 from telstra_database.book;                  
+select * from telstra_database.book limit 2;              
+
+
+select * from telstra_database.book order by bprice desc, bookid desc limit 1;  
+
+select * from telstra_database.book where rownum <= 3;  
+
+
+select * from telstra_database.book where bname = "React" 
+order by bprice desc limit 1;                             
+
+
+
+select * from telstra_database.book limit 2,3;            
+
+
+
+select * from telstra_database.book limit 50 PERCENT;     
+
+
+
+select * from telstra_database.book having count(bookid)/2);  
+
+
+
+select * from telstra_database.book where bname like 'J%'; 
+
+
+select * from telstra_database.book where bname like '_a%'; 
+
+
+
+select * from telstra_database.book where bname like 'j%' or bname like 'r%'; 
+
+
+
+select * from telstra_database.book where bname like '[jr]';  
+
+
+select * from telstra_database.book where bname in ('Java', 'English');
+
+
+select orders.ordersid, book.bname, orders.ordersdate from 
+telstra_database.orders 
+Inner Join telstra_database.book on orders.bookid = book.bookid;   
+
+
+
+select orders.ordersid, book.bname, orders.ordersdate from 
+telstra_database.orders 
+Left Join telstra_database.book on orders.bookid = book.bookid;  
+
+
+
+select orders.ordersid, book.bname, orders.ordersdate from 
+telstra_database.orders 
+Right Join telstra_database.book on orders.bookid = book.bookid;   
+
+
+select orders.ordersid, book.bname, orders.ordersdate from 
+telstra_database.orders 
+Cross Join telstra_database.book;   -- cross join will give cartesian product & it differs from full outer join
+
+
+
+select B1.bname as BookName1, B2.bname as BookName2, B1.bookid from 
+telstra_database.book B1, telstra_database.book B2 where 
+B1.bookid <> B2.bookid AND B1.bname = B2.bname;                  
+
+
+
+select * from telstra_database.book union 
+select * from telstra_database.orders;            
+
+
+select count(bookid), bname from telstra_database.book 
+group by bname order by count(bookid) desc; 
+
+
+
+select count(bookid), bname from telstra_database.book 
+group by bname having bname like 'r%' order by count(bookid) desc;         
+
+
+
+select orders.bookid, count(orders.ordersid) from 
+telstra_database.orders left join telstra_database.book 
+on orders.bookid = book.bookid group by bname;               
+
+
+
+-- where keyword couldnt be used with aggregate funs ; so use having
+select count(bookid), bname from telstra_database.book 
+group by bname having count(bookid) >= 1;                      
+	
+

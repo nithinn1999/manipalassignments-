@@ -13,16 +13,10 @@ public class Tax {
 		{
 			Manager m=(Manager) emp;
 		}
-		else
-			if (emp instanceof Programmer)
+		else if (emp instanceof Programmer)
 			{
-				
+				Programmer e =(Programmer) emp;		
 			}
-			else
-			{
-				
-			}
-		
 		
 		return taxAmt;
 	}

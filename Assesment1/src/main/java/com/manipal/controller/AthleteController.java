@@ -24,7 +24,6 @@ public class AthleteController {
 	public String getForm() {
 		return "userform";
 	}
-	
 	@RequestMapping(value="/addUser", method=RequestMethod.POST)	
 	public String addUserDetails(@ModelAttribute User user) {
 		userDao.addUser(user);		
@@ -36,5 +35,4 @@ public class AthleteController {
 		List<User> userList = userDao.getAllUsers();
 		return new ModelAndView("userdetails", "userList", userList);
 	}
-	
 }

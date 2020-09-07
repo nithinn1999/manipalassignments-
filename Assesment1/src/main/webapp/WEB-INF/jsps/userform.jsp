@@ -12,7 +12,7 @@
 <form action="addUser" method="post">
 <table border = "1">
 <br><br><br><br>
-	<tr><td>AtheleteName :</td><td><input type="text" name="atheletename" pattern="[A-Z]{1}+[A-Za-z]{2,40}+"/></td></tr>
+	<tr><td>AtheleteName :</td><td><input type="text" name="atheletename" pattern="^[A-Z]{1}[a-z]{2,40}" title="must start with caps char"></td></tr>
 	<tr><td>Gender :</td><td><input type="radio" name="gender" value="male"> Male 
 	<input type="radio" name="gender" value="female"> Female</td></tr>
   			
@@ -28,7 +28,7 @@
     					 			
 	<tr><td>Email :</td><td><input type="text" name="useremail"/></td></tr>
 	<tr><td><label for="Mobile">Mobile:</label></td><td>
-  	<input type="text" name="usermobile" minlength="10"></td></tr>
+  	<input type="text" name="usermobile" pattern=".{10,10}" title="10 digits only"></td></tr>
 	
 	<tr><td><input type="submit" value="Submit" /><a href="http://localhost:8080/spring-mvc-demo/userform">Cancel</a>
 	</td><td><a href="http://localhost:8080/spring-mvc-demo">Home</a></td></tr>

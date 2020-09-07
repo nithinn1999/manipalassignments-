@@ -21,13 +21,13 @@ public class UserDao implements IUserDao {
 	}
 	
 	public int addUser(User user) {
-		String query = "INSERT INTO USER(AtheleteName,gender,category,useremail,usermobile) VALUES(?,?,?,?,?)";
+		String query = "INSERT INTO athlete(athlete_name,athlete_gender,category,athlete_email,athlete_mobile) VALUES(?,?,?,?,?)";
 		int status = jdbcTemplate.update(query, user.getAtheletename(),user.getGender(),user.getCategory(),user.getUseremail(),user.getUsermobile());
 		return status;		
 	}
 
 	public List<User> getAllUsers() {
-		String sql = "SELECT * FROM USER";
+		String sql = "SELECT * FROM athlete";
 		List<User> userList = jdbcTemplate.query(sql, new UserResultSetExtractor());
 		return userList;
 	}

@@ -46,6 +46,3 @@ public class User {
 		this.usermobile = usermobile;
 	}
 }
-
-//CREATE TABLE USER (USERNAME VARCHAR(25) NOT NULL, LOCATION VARCHAR(25) );
-

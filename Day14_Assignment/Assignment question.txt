@@ -1,0 +1,7 @@
+Tasks:
+
+1).delete movie
+2).getAllMovies - assignment
+
+3).get by title
+4).get by leadrole and title 
